@@ -1,14 +1,21 @@
 package org.skillset.mystays;
 
-public class Account{
+public class Account {
 
-    public Account(Long id, String email, String firstName, String lastName, String password, String phone) {
+    private Long id;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String password;
+    private String phoneNumber;
+
+    public Account(Long id, String email, String firstName, String lastName, String password, String phoneNumber) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
     }
 
     public Long getId() {
@@ -19,22 +26,13 @@ public class Account{
         this.id = id;
     }
 
-    private Long id;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String password;
-
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
-
-    private String phone;
-
 
     public String getEmail() {
         return email;
