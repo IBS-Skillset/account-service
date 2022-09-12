@@ -28,8 +28,8 @@ public class AccountResource {
     }
 
     @POST
-    public void create(Account account){
-        accountService.create(account);
+    public void insert(Account account){
+        accountService.insert(account);
     }
 
     @PUT

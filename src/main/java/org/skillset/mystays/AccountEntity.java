@@ -20,6 +20,5 @@ public class AccountEntity extends PanacheEntityBase {
     public String firstName;
     public String lastName;
     public String password;
-
-    public String phone;
+    public String phoneNumber;
 }
