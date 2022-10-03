@@ -28,8 +28,8 @@ public class AccountResource {
     }
 
     @POST
-    public void insert(Account account){
-        accountService.insert(account);
+    public boolean insert(Account account){
+        return accountService.insert(account);
     }
 
     @PUT
