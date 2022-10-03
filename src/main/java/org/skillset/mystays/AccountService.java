@@ -18,14 +18,25 @@ public class AccountService {
     }
 
     @Transactional
-    public void insert(Account account) {
-        AccountEntity ac = new AccountEntity();
-        ac.email = account.getEmail();
-        ac.firstName = account.getFirstName();
-        ac.lastName = account.getLastName();
-        ac.password = account.getPassword();
-        ac.phoneNumber = account.getPhoneNumber();
-        ac.persist();
+    public boolean insert(Account account) {
+
+        try {
+
+            AccountEntity ac = new AccountEntity();
+            ac.email = account.getEmail();
+            ac.firstName = account.getFirstName();
+            ac.lastName = account.getLastName();
+            ac.password = account.getPassword();
+            ac.phoneNumber = account.getPhoneNumber();
+            ac.persist();
+            System.out.println("New Account Created Successfully");
+            return true;
+        }
+        catch(Exception e) {
+            System.out.println("Account Creation failed");
+            return false;
+        }
+
     }
 
     @Transactional
