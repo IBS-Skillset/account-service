@@ -13,8 +13,13 @@ public class AccountService {
     public List<Account> get() {
         List<AccountEntity> listAll = AccountEntity.findAll().list();
         return listAll.stream().map(ac -> {
-            return new Account(ac.id, ac.email, ac.firstName, ac.lastName, ac.password, ac.phoneNumber);
+            return new Account(ac.id, ac.email, ac.firstName, ac.lastName, ac.password, ac.phone);
         }).collect(Collectors.toList());
+    }
+
+    public Account get(String emailId) {
+        AccountEntity ac = AccountEntity.findById(emailId);
+        return new Account(ac.id, ac.email, ac.firstName, ac.lastName, ac.password, ac.phone);
     }
 
     @Transactional
@@ -27,7 +32,7 @@ public class AccountService {
             ac.firstName = account.getFirstName();
             ac.lastName = account.getLastName();
             ac.password = account.getPassword();
-            ac.phoneNumber = account.getPhoneNumber();
+            ac.phone = account.getPhoneNumber();
             ac.persist();
             System.out.println("New Account Created Successfully");
             return true;
@@ -46,7 +51,7 @@ public class AccountService {
         entity.firstName = account.getFirstName();
         entity.lastName = account.getLastName();
         entity.password = account.getPassword();
-        entity.phoneNumber = account.getPhoneNumber();
+        entity.phone = account.getPhoneNumber();
     }
 
     @Transactional
