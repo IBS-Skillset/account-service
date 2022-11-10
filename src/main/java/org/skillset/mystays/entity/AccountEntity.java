@@ -1,4 +1,4 @@
-package org.skillset.mystays;
+package org.skillset.mystays.entity;
 
 import javax.persistence.*;
 
@@ -18,6 +18,7 @@ public class AccountEntity extends PanacheEntityBase {
     public String lastName;
     @Column(length = 60)
     public String password;
+    @Column(unique=true)
     public String email;
     public String role="USER";
     public boolean enabled = true;

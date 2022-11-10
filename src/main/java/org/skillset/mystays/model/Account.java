@@ -1,4 +1,4 @@
-package org.skillset.mystays;
+package org.skillset.mystays.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

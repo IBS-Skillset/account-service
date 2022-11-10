@@ -1,4 +1,4 @@
-package org.skillset.mystays;
+package org.skillset.mystays.controller;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;

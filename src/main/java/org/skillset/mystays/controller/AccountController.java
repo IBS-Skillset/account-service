@@ -1,4 +1,7 @@
-package org.skillset.mystays;
+package org.skillset.mystays.controller;
+
+import org.skillset.mystays.model.Account;
+import org.skillset.mystays.repository.AccountService;
 
 import java.util.List;
 
@@ -17,29 +20,14 @@ import javax.ws.rs.core.MediaType;
 @Path("account/api")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class AccountResource {
+public class AccountController {
 
     @Inject
     AccountService accountService;
-
-    @GET
-    public List<Account> get(){
-        return accountService.get();
-    }
 
     @POST
     public boolean insert(Account account){
         return accountService.insert(account);
     }
 
-    @PUT
-    public void update(Account account){
-        accountService.update(account);
-    }
-
-    @DELETE
-    @Path("{id}")
-    public void delete(@PathParam("id") Long id){
-        accountService.delete(id);
-    }
 }
