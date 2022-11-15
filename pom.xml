@@ -79,6 +79,10 @@
       <artifactId>quarkus-eureka</artifactId>
       <version>0.0.14</version>
     </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-spring-cloud-config-client</artifactId>
+    </dependency>
 
   </dependencies>
   <build>
