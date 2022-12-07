@@ -4,18 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.skillset.mystays.entity.UserAddress;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDetails {
-    private Long id;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String role;
-    private String phone;
-    private UserAddress address;
+    public long id;
+    public String email;
+    public String firstName;
+    public String lastName;
+    public String role;
+    public String phone;
+    public Address address;
 }
