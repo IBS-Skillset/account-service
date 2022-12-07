@@ -11,9 +11,9 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class Address {
-    private String type;
-    private String address;
-    private String city;
-    private String country;
-    private Integer zipcode;
+    public String type;
+    public String address;
+    public String city;
+    public String country;
+    public String zipcode;
 }
