@@ -31,6 +31,6 @@ public class AccountEntity extends PanacheEntityBase {
     public String role="USER";
     public boolean enabled = true;
     public String phone;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
     public List<UserAddress>  address;
 }
