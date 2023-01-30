@@ -39,13 +39,13 @@ public class AccountService {
             ac.lastName = account.getLastName();
             ac.password = account.getPassword();
             ac.phone = account.getPhoneNumber();
-            ac.persist();
+            ac.persistAndFlush();
 
             UserAddress userAddress= new UserAddress();
             userAddress.address = account.getFirstName() + " address";
             userAddress.user = ac;
             userAddress.zipcode = "23456";
-            userAddress.persist();
+            userAddress.persistAndFlush();
             return true;
         } catch (Exception e) {
             return false;
