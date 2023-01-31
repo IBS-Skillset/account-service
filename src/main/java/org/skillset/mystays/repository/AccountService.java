@@ -9,6 +9,7 @@ import org.skillset.mystays.model.Address;
 import org.skillset.mystays.model.UserDetails;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.PersistenceException;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -41,13 +42,14 @@ public class AccountService {
             ac.phone = account.getPhoneNumber();
             ac.persistAndFlush();
 
-            UserAddress userAddress= new UserAddress();
+            UserAddress userAddress = new UserAddress();
             userAddress.address = account.getFirstName() + " address";
             userAddress.user = ac;
             userAddress.zipcode = "23456";
             userAddress.persistAndFlush();
             return true;
-        } catch (Exception e) {
+        } catch (PersistenceException e) {
+            Log.error("Error on Persist data: ", e);
             return false;
         }
     }
