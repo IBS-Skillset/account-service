@@ -24,7 +24,11 @@ public class AccountController {
     @POST
     @Path("/signup")
     public Response insert(Account account) {
-        return Response.status(200).entity(accountService.insert(account)).build();
+        try {
+            return Response.status(200).entity(accountService.insert(account)).build();
+        } catch (Exception e) {
+            return Response.status(500).entity(e.getMessage()).build();
+        }
     }
 
     @GET
