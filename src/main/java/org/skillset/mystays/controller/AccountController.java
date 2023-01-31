@@ -11,6 +11,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.GET;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("account/api")
 @Produces(MediaType.APPLICATION_JSON)
@@ -22,8 +23,8 @@ public class AccountController {
 
     @POST
     @Path("/signup")
-    public boolean insert(Account account){
-        return accountService.insert(account);
+    public Response insert(Account account) {
+        return Response.status(200).entity(accountService.insert(account)).build();
     }
 
     @GET
