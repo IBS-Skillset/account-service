@@ -49,7 +49,7 @@ public class AccountService {
             userAddress.persistAndFlush();
             return true;
         } catch (PersistenceException e) {
-            Log.error("Error on Persist data: ", e);
+            Log.error("Error on Persist data : ", e);
             return false;
         }
     }
