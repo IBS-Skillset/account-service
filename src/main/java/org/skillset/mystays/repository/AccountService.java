@@ -25,7 +25,7 @@ public class AccountService {
             Address address = new Address(userAddress.getType(), userAddress.address, userAddress.city, userAddress.country, userAddress.zipcode);
             return new UserDetails(accountEntity.id, accountEntity.email, accountEntity.firstName, accountEntity.lastName, accountEntity.role, accountEntity.phone, address);
         } catch (Exception e) {
-            Log.info("User details exception"+e);
+            Log.info("User details exception " + e);
             return null;
         }
 
@@ -49,7 +49,7 @@ public class AccountService {
             userAddress.persistAndFlush();
             return true;
         } catch (PersistenceException e) {
-            Log.error("Error on Persist data: ", e);
+            Log.error("Error on Persist data : ", e);
             return false;
         }
     }
