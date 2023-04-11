@@ -47,6 +47,12 @@ You can then execute your native executable with: `./target/account-service-1.0.
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
+## Docker commands to run in local
+
+docker build -t account-service-1.0.0:latest .
+
+docker run -p 8089:8089 -e HOST_IP=host.docker.internal  --name account-service account-service-1.0.0:latest
+
 ## Related Guides
 
 - Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code for Hibernate ORM via the active record or the repository pattern
