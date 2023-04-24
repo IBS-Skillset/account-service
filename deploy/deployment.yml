@@ -29,6 +29,13 @@ spec:
           ports:
             - name: http
               containerPort: 8089
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "200m"
+            limits:
+              memory: "500Mi"
+              cpu: "500m"
           env:
             - name: HOST_DB
               value: postgres-service.db-system
