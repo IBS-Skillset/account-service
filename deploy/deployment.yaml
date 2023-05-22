@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: account-service-api
-          image: 306472407007.dkr.ecr.ap-south-1.amazonaws.com/ibs-skillset-happystays/account-service:4ffe4f2
+          image: 306472407007.dkr.ecr.ap-south-1.amazonaws.com/ibs-skillset-happystays/account-service:94ccf28
           imagePullPolicy: Always
           ports:
             - name: http
